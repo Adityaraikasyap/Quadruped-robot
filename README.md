@@ -21,9 +21,9 @@ ros2 launch go2_config gazebo.launch.py
 
 **Terminal 2:- Control motion of robot using keyboard, After this commond Press "i" in terminal itself to see robot in farword motion.** 
 <br>
-source /opt/ros/humble/setup.bash
-source ~/go2_ws/install/setup.bash
-ros2 run teleop_twist_keyboard teleop_twist_keyboard
+source /opt/ros/humble/setup.bash <br>
+source ~/go2_ws/install/setup.bash <br>
+ros2 run teleop_twist_keyboard teleop_twist_keyboard <br>
 👉 Press i to move the robot forward.
 <br>
 **Terminal 3:- If you don't see the world in the pop window. just drop and select the raw image in it.**

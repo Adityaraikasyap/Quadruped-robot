@@ -10,9 +10,9 @@ System support:-
 **Once extract all the file from above link with same system support. Just go with below prompt for launching the Vision Based Quadruped robot. **
 **Terminal 1:- Now Gazebo will open and you see robot model in it.**
 <br>
-source /opt/ros/humble/setup.bash
-source ~/go2_ws/install/setup.bash
-ros2 launch go2_config gazebo.launch.py
+source /opt/ros/humble/setup.bash <br>
+source ~/go2_ws/install/setup.bash <br>
+ros2 launch go2_config gazebo.launch.py <br>
 <br>
 <img width="534" height="291" alt="Screenshot from 2026-04-18 14-36-42" src="https://github.com/user-attachments/assets/4060f643-cd73-4d7e-a1b2-3af4a0a8ea43" />
 <br>
@@ -28,76 +28,76 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard <br>
 <br>
 **Terminal 3:- If you don't see the world in the pop window. just drop and select the raw image in it.**
 <br>
-source /opt/ros/humble/setup.bash
-source ~/go2_ws/install/setup.bash
-ros2 run ros_gz_bridge parameter_bridge \
-/front_camera/image@sensor_msgs/msg/Image[ignition.msgs.Image \
-/front_camera/camera_info@sensor_msgs/msg/CameraInfo[ignition.msgs.CameraInfo
+source /opt/ros/humble/setup.bash <br>
+source ~/go2_ws/install/setup.bash <br>
+ros2 run ros_gz_bridge parameter_bridge \ <br>
+/front_camera/image@sensor_msgs/msg/Image[ignition.msgs.Image \ <br>
+/front_camera/camera_info@sensor_msgs/msg/CameraInfo[ignition.msgs.CameraInfo <br>
 👉 If no image appears, select raw image manually.
 <br>
 **Terminal 4:-**
 <br>
-source /opt/ros/humble/setup.bash
-source ~/go2_ws/install/setup.bash
-ros2 run rqt_image_view rqt_image_view
+source /opt/ros/humble/setup.bash <br>
+source ~/go2_ws/install/setup.bash <br>
+ros2 run rqt_image_view rqt_image_view <br>
 <br>
 <img width="673" height="692" alt="Screenshot from 2026-04-12 11-36-36" src="https://github.com/user-attachments/assets/4a81d78b-f2cf-4063-b73f-41e8ea87a5c2" />
 <br>
 **Terminal 5:- Vision start**
 <br>
-source /opt/ros/humble/setup.bash
-source ~/go2_ws/install/setup.bash
-ros2 launch go2_vision vision.launch.py
+source /opt/ros/humble/setup.bash <br>
+source ~/go2_ws/install/setup.bash <br>
+ros2 launch go2_vision vision.launch.py <br>
 <br>
 ** Terminal 6:-**
 <br>
-source /opt/ros/humble/setup.bash
-source ~/go2_ws/install/setup.bash
-ros2 run go2_vision terrain_detector
+source /opt/ros/humble/setup.bash <br>
+source ~/go2_ws/install/setup.bash <br>
+ros2 run go2_vision terrain_detector <br>
 <br>
 **Terminal 7:-**
 <br>
-source /opt/ros/humble/setup.bash
-source ~/go2_ws/install/setup.bash
-ros2 topic echo /vision/terrain
+source /opt/ros/humble/setup.bash <br>
+source ~/go2_ws/install/setup.bash <br>
+ros2 topic echo /vision/terrain <br>
 
 **Terminal 8:- It will pop up the vision terrain classification window**
 <br>
-source /opt/ros/humble/setup.bash
-source ~/go2_ws/install/setup.bash
-ros2 run go2_vision vision_node --ros-args -p input_topic:=/front_camera/image
+source /opt/ros/humble/setup.bash <br>
+source ~/go2_ws/install/setup.bash <br>
+ros2 run go2_vision vision_node --ros-args -p input_topic:=/front_camera/image <br>
 <br>
-<img width="200" height="200" alt="Screenshot from 2026-04-21 11-59-49" src="https://github.com/user-attachments/assets/c3264052-0a42-4d54-9af2-54421e02bce3" />
+<img width="400" height="400" alt="Screenshot from 2026-04-21 11-59-49" src="https://github.com/user-attachments/assets/c3264052-0a42-4d54-9af2-54421e02bce3" />
 <br>
-<img width="200" height="200" alt="Screenshot from 2026-04-14 19-46-56" src="https://github.com/user-attachments/assets/c5748d3e-1cf0-4a1e-ae28-ea91ba5a8d0a" />
+<img width="400" height="400" alt="Screenshot from 2026-04-14 19-46-56" src="https://github.com/user-attachments/assets/c5748d3e-1cf0-4a1e-ae28-ea91ba5a8d0a" />
 <br>
-<img width="200" height="200" alt="Screenshot from 2026-04-22 14-48-34" src="https://github.com/user-attachments/assets/1f64ba4d-3de4-4fa3-8334-9377922e9e97" />
+<img width="400" height="400" alt="Screenshot from 2026-04-22 14-48-34" src="https://github.com/user-attachments/assets/1f64ba4d-3de4-4fa3-8334-9377922e9e97" />
 </br>
 
 **Terminal 9:- We can see the live terrain dataset in this terminal**
 <br>
-source /opt/ros/humble/setup.bash
-source ~/go2_ws/install/setup.bash
-ros2 topic echo /vision/detections
+source /opt/ros/humble/setup.bash <br>
+source ~/go2_ws/install/setup.bash <br>
+ros2 topic echo /vision/detections <br>
 
 **Terminal 10: Start Autonomous adaptive gait control motion**
 👉 Used for collecting training data for terrain classification.
 <br>
-source /opt/ros/humble/setup.bash
-source ~/go2_ws/install/setup.bash
-python3 /home/rai/go2_ws/src/terrain_adaptive_controller.py
-source /opt/ros/humble/setup.bash
-source ~/go2_ws/install/setup.bash
-python3 ~/go2_ws/src/go2_vision/scripts/capture_images.py
+source /opt/ros/humble/setup.bash <br>
+source ~/go2_ws/install/setup.bash <br>
+python3 /home/rai/go2_ws/src/terrain_adaptive_controller.py <br>
+source /opt/ros/humble/setup.bash <br>
+source ~/go2_ws/install/setup.bash <br>
+python3 ~/go2_ws/src/go2_vision/scripts/capture_images.py <br>
 {it will use to capture the image for model dataset terraining }
 
 **If we see multiple robots in gazebo while launching it again and again run this**
-pkill -9 ign
-pkill -9 gzserver
-pkill -9 gzclient
-rm -rf /dev/shm/fastdds*
-source /opt/ros/humble/setup.bash
-cd ~/go2_ws
-rm -rf build install log
-colcon build --symlink-install
-source install/setup.bash
+pkill -9 ign <br>
+pkill -9 gzserver <br>
+pkill -9 gzclient <br>
+rm -rf /dev/shm/fastdds* <br>
+source /opt/ros/humble/setup.bash <br>
+cd ~/go2_ws <br>
+rm -rf build install log <br>
+colcon build --symlink-install <br>
+source install/setup.bash <br>
